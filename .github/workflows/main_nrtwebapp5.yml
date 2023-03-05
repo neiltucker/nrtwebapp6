@@ -46,6 +46,7 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+      openai_api_key: ${{ secrets.OPENAI_API_KEY }} 
 
     steps:
       - name: Download artifact from build job
@@ -61,10 +62,3 @@ jobs:
           app-name: 'nrtwebapp5'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BE64C8CAFEEE4116BF5E34F5C2F1863B }}
-          
-      - name: Apply environment variable
-        env:
-          openai_api_key: ${{ secrets.OPENAI_API_KEY }}  
-        run: |
-          nbdev_test_nbs
-          
