@@ -62,9 +62,6 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BE64C8CAFEEE4116BF5E34F5C2F1863B }}
 
-      - name: Save state   
-        run: echo "{openai_api_key}=${{ secrets.OPENAI_API_KEY }}" >> $GITHUB_STATE
-          
-      - name: Set output   
-        run: echo "{openai_api_key}=${{ secrets.OPENAI_API_KEY }}" >> $GITHUB_OUTPUT
-  
+      - name: Environment Variables
+        env:
+          openai_api_key: ${{ secrets.OPENAI_API_KEY }}  
