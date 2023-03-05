@@ -4,7 +4,7 @@ from flask import Flask, redirect, render_template, request, url_for
 
 app = Flask(__name__)
 
-openai.api_key = os.environ['openai_api_key']
+openai.api_key = os.environ.get('openai_api_key')
 
 def training_data(data):
     return """Please predict text as postive or negative.
