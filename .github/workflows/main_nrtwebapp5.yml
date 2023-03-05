@@ -63,6 +63,8 @@ jobs:
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BE64C8CAFEEE4116BF5E34F5C2F1863B }}
           
       - name: Apply environment variable
-        run: echo "Apply environment variable"
         env:
           openai_api_key: ${{ secrets.OPENAI_API_KEY }}  
+        run: |
+          nbdev_test_nbs
+          
