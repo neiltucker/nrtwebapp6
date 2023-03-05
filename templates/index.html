@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<head>
+    <title>ChatGPT Sentiment Analysis</title>
+</head>
+<body>
+    <H1> ChatGPT Sentiment Analysis</H1>
+    <form action = "/" method="POST">
+        <input type = "text" name="data" placeholder="Enter text to be analyzed here:" required />
+        <input type = "submit" value="Submit data" />
+
+        {% if result %}
+        <div class="results"> {{ result }} </div>
+        {% endif %}
+    </form>
+</body>
+</html>
