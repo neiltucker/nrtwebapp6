@@ -19,13 +19,9 @@ database = client.get_database_client(database_name)
 container = database.get_container_client(container_name)
 
 def training_data(data):
-    return """Please predict text as postive or negative.
-    text: You are a bad man.
-    sentiment: negative
-    text: You are a good man.
-    sentiment: positive
+    return """Please predict text as POSITIVE, NEGATIVE or NEUTRAL:
     text:  {}
-    sentiment:""".format(data.capitalize())
+    sentiment:""".format(data)
  
 @app.route('/', methods=("GET", "POST"))
 def index():
