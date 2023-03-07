@@ -61,3 +61,4 @@ jobs:
           app-name: 'nrtwebapp6'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FDCC4B68CE6D4704B296DCF5FB5A97BA }}
+          
